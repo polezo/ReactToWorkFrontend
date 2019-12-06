@@ -154,7 +154,16 @@
 
 .checkbox {
   margin-left:3px;
+  top:5px;
+  height:14px;
+  width:15px;
 }
+
+input:checked {
+  color:white
+}
+
+
 
 .middle-button {
 margin-top:45%;
@@ -304,4 +313,17 @@ align-items: center;
 
 .loading-done {
   margin-top:0px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .button-save {
+    /* margin:29px;
+    margin-top:10px; */
+    margin-bottom:0px;
+ }
+
+ .loading {
+   margin-top:-9%
+ }
+
 }
