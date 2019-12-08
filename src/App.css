@@ -154,14 +154,14 @@
 
 .checkbox {
   margin-left:3px;
-  top:5px;
-  height:14px;
-  width:15px;
+  /* top:5px; */
+  height:16px;
+  /* width:15px; */
 }
 
-input:checked {
+/* input:checked {
   color:white
-}
+} */
 
 
 

@@ -41,7 +41,7 @@ class App extends React.Component {
 
   componentDidMount(){
     if(localStorage.getItem("jwt")){
-      fetch("http://localhost:3000/profile", {
+      fetch("https://react-employed.herokuapp.com/profile", {
         headers: {
           "Authorization" : localStorage.getItem("jwt")
         }
@@ -76,7 +76,7 @@ class App extends React.Component {
     this.setState({jobs:[]})
       let city = this.state.search.split(" ").join("+")
     trackPromise(
-      fetch(`http://localhost:3000/jobs?search=${city}`))
+      fetch(`https://react-employed.herokuapp.com/jobs?search=${city}`))
       .then(res=>res.json())
       .then(this.addJobsToState)
   }
@@ -84,7 +84,7 @@ class App extends React.Component {
   fetchFromStackOverFlow = () => {
     this.setState({jobs:[]})
       let city = this.state.search.split(" ").join("+")
-      trackPromise(fetch(`http://localhost:3000/stackoverflowjobs?search=${city}`))
+      trackPromise(fetch(`https://react-employed.herokuapp.com/stackoverflowjobs?search=${city}`))
       .then(res=>res.json())
       .then(this.addJobsToState)
   }
@@ -121,7 +121,7 @@ class App extends React.Component {
         user: loginObj
       })
     }
-    fetch('http://localhost:3000/login', objConfig)
+    fetch('https://react-employed.herokuapp.com/login', objConfig)
     .then(response=>response.json())
     .then(data=>{
       localStorage.setItem("jwt", data.jwt)
@@ -146,7 +146,7 @@ class App extends React.Component {
         zipCode: e.target.zipCode.value,
         admin: false
       }
-      fetch('http://localhost:3000/users', {
+      fetch('https://react-employed.herokuapp.com/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -215,7 +215,7 @@ class App extends React.Component {
       },
       body: JSON.stringify(data)
     }
-    fetch('http://localhost:3000/jobs', objConfig)
+    fetch('https://react-employed.herokuapp.com/jobs', objConfig)
     .then(res=>res.json())
     .then(this.addSavedJobToState)
     } else {
@@ -223,7 +223,7 @@ class App extends React.Component {
       let newJob = this.state.usersSavedJobs.find(savedJob=>savedJob.link === job.link)
       let save = this.state.usersSaves.find(save=>save.job_id===newJob.id)
       
-      fetch(`http://localhost:3000/saves/${save.id}`,{
+      fetch(`https://react-employed.herokuapp.com/saves/${save.id}`,{
         method: "DELETE", 
         headers: {
           "Authorization":localStorage.jwt,
@@ -309,7 +309,7 @@ class App extends React.Component {
         job: this.state.createPostInfo
       })
     }
-    fetch('http://localhost:3000/jobs', objConfig)
+    fetch('https://react-employed.herokuapp.com/jobs', objConfig)
     .then(response=>response.json())
     .then(data=>{
       Swal.fire({
