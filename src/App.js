@@ -342,13 +342,13 @@ class App extends React.Component {
 
       <CreatePost show={this.state.showCreatePost} onHide={()=>{this.toggleCreatePost(false)}} updatePostFormState={this.updatePostFormState} formState={this.state.createPostInfo} submitAPost={this.submitAPost}/>
       {/* <Loading/> */}
-      <Router>
+      <Router basepath="/reacttowork">
 
       <Home path="/" usersSavedJobs={this.state.usersSavedJobs} searchResults={this.state.searchResults} includeRemote={this.state.includeRemote} setSearch={this.setSearch} submitSearch={this.submitSearch} setFromRemoteOK={this.setFromRemoteOK} addToSavedJobs={this.addToSavedJobs} jobs={this.state.jobs} currentUser={this.state.currentUser} toggleCreatePost={this.toggleCreatePost}/>
     
       <FourOFour default />
 
-      <Profile path="/profile" user={this.state.currentUser} usersSavedJobs={this.state.usersSavedJobs} jobs={this.state.usersSavedJobs} addToSavedJobs={this.addToSavedJobs}/>
+      <Profile path="/reacttowork/profile" user={this.state.currentUser} usersSavedJobs={this.state.usersSavedJobs} jobs={this.state.usersSavedJobs} addToSavedJobs={this.addToSavedJobs}/>
 
       </Router>
       
