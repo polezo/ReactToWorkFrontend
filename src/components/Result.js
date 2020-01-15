@@ -41,11 +41,11 @@ class Result extends React.Component {
                         <h6 className="float-right d-inline"><strong>Posted On:</strong><Moment format="MM/DD/YYYY">{this.props.job.date}</Moment></h6>
                         <h5 className="card-title">{this.props.job.position}</h5>
                         <Markup content={this.innerTextHelper(this.props.job.description)} />
-                        {this.state.stackOverFlowJob ? <span className="expander" onClick={this.toggleExpand}>{this.state.expanded ? <FaCaretUp/> : <FaCaretDown/>}</span> : <span className="expander"><a href={this.props.job.link}><i>See full description</i></a></span>}
+                        {this.state.stackOverFlowJob ? <span className="expander" onClick={this.toggleExpand}>{this.state.expanded ? <FaCaretUp/> : <FaCaretDown/>}</span> : <span className="expander"><a href={this.props.job.link}><i>See full description on RemoteOK.io</i></a></span>}
                     </div>
                     <div className="col d-flex justify-content-center align-items-center">
                         <div className="">
-                            <button onClick={()=>window.open(`${this.props.job.link}`,'_blank')} className="btn btn-info align-middle button-result">{this.state.stackOverFlowJob ? <span>View Job on StackOverflow  <FaStackOverflow/></span>: "View Job"}</button>
+                            <button onClick={()=>window.open(`${this.props.job.link}`,'_blank')} className="btn btn-info align-middle button-result">{this.state.stackOverFlowJob ? <span>View Job on StackOverflow  <FaStackOverflow/></span>: "View Job On RemoteOK.io"}</button>
     
                         </div>
                     </div>
