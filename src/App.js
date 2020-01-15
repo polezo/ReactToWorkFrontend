@@ -295,7 +295,6 @@ class App extends React.Component {
   
 
   submitAPost = (e) => {
-    debugger
     e.preventDefault()
     let objConfig ={
       method: "POST",
